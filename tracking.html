@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brothers Business Solutions | Shipment Tracking</title>
+  <style>
+    :root { color-scheme: light; --navy:#10233f; --blue:#1769aa; --pale:#eef5fb; --ink:#182230; --muted:#667085; --line:#d7e0ea; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; background:#f4f7fb; color:var(--ink); }
+    header { background:var(--navy); color:white; padding:24px 18px; text-align:center; }
+    header h1 { margin:0 0 8px; font-size:clamp(24px,5vw,36px); }
+    header p { margin:0; color:#d8e6f5; }
+    main { width:min(720px,92%); margin:28px auto; }
+    .card { background:white; border:1px solid var(--line); border-radius:16px; padding:22px; box-shadow:0 8px 24px rgba(16,35,63,.07); }
+    h2 { margin:0 0 10px; font-size:24px; }
+    .hint { color:var(--muted); line-height:1.5; margin:0 0 18px; }
+    label { display:block; font-weight:700; margin:0 0 8px; }
+    input { width:100%; padding:14px 12px; border:1px solid #b8c7d8; border-radius:9px; font-size:16px; }
+    button { width:100%; margin-top:12px; padding:14px; border:0; border-radius:9px; background:var(--blue); color:white; font-weight:700; font-size:16px; cursor:pointer; }
+    button:disabled { opacity:.6; cursor:wait; }
+    #result { margin-top:20px; }
+    .result-card { border:1px solid var(--line); background:var(--pale); border-radius:10px; padding:16px; line-height:1.65; overflow-wrap:anywhere; }
+    .error { color:#a12626; background:#fff1f0; border:1px solid #f2c6c2; padding:13px; border-radius:9px; }
+    .status { display:inline-block; background:#dcefe3; color:#17633a; border-radius:20px; padding:4px 10px; font-weight:700; }
+    footer { text-align:center; color:var(--muted); font-size:13px; padding:10px 18px 30px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Brothers Business Solutions</h1>
+    <p>Transport &amp; Shipment Tracking</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Track Your Shipment</h2>
+      <p class="hint">Enter your tracking number below to check the latest shipment status and location.</p>
+      <form id="trackingForm">
+        <label for="trackingNumber">Tracking Number</label>
+        <input id="trackingNumber" name="trackingNumber" type="text" autocomplete="off" required placeholder="Enter tracking number">
+        <button id="trackButton" type="submit">Track Shipment</button>
+      </form>
+      <div id="result" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer>Brothers Business Solutions · Shipment information is shown when available.</footer>
+
+  <script>
+    /*
+      SETUP REQUIRED:
+      Replace YOUR_SUPABASE_PROJECT_URL and YOUR_SUPABASE_PUBLISHABLE_KEY below
+      with your own Supabase Project URL and publishable/anon key.
+      Never put a service_role or secret key in a public website.
+    */
+    const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
+    const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+    const form = document.getElementById("trackingForm");
+    const input = document.getElementById("trackingNumber");
+    const button = document.getElementById("trackButton");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const trackingNumber = input.value.trim();
+      if (!trackingNumber) return;
+
+      if (SUPABASE_URL.includes("YOUR_SUPABASE") || SUPABASE_KEY.includes("YOUR_SUPABASE")) {
+        result.innerHTML = '<p class="error">Setup is not complete yet. Add your Supabase Project URL and publishable key to this file.</p>';
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = "Searching...";
+      result.textContent = "";
+      try {
+        const response = await fetch(`${SUPABASE_URL.replace(/\/$/, "")}/rest/v1/rpc/track_shipment`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_KEY,
+            "Authorization": `Bearer ${SUPABASE_KEY}`
+          },
+          body: JSON.stringify({ p_tracking_number: trackingNumber })
+        });
+        if (!response.ok) {
+          throw new Error("The tracking service could not be reached. Please check the Supabase setup and table permissions.");
+        }
+        const data = await response.json();
+        const shipment = Array.isArray(data) ? data[0] : data;
+        if (!shipment) {
+          result.innerHTML = '<p class="error">No shipment was found for that tracking number. Please check the number and try again.</p>';
+          return;
+        }
+        const card = document.createElement("div");
+        card.className = "result-card";
+        const heading = document.createElement("h3");
+        heading.textContent = "Shipment Details";
+        card.appendChild(heading);
+        const fields = [
+          ["Tracking Number", shipment.tracking_number],
+          ["Status", shipment.status],
+          ["Current Location", shipment.current_location],
+          ["Last Updated", shipment.updated_at ? new Date(shipment.updated_at).toLocaleString() : "Not available"]
+        ];
+        for (const [label, value] of fields) {
+          const p = document.createElement("p");
+          const strong = document.createElement("strong");
+          strong.textContent = label + ": ";
+          p.appendChild(strong);
+          p.appendChild(document.createTextNode(value == null || value === "" ? "Not available" : String(value)));
+          card.appendChild(p);
+        }
+        result.replaceChildren(card);
+      } catch (error) {
+        result.innerHTML = '<p class="error">We could not check this shipment right now. Please try again later or contact Brothers Business Solutions.</p>';
+      } finally {
+        button.disabled = false;
+        button.textContent = "Track Shipment";
+      }
+    });
+  </script>
+</body>
+</html>
