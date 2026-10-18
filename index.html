@@ -332,8 +332,13 @@ async function searchPinCode() {
       " | Post Office: " + offices.map(o => o.Name).join(", ");
 
     const delivery = document.createElement("p");
-    delivery.textContent =
-      "Delivery service: Please confirm availability with Brothers Business Solutions.";
+    
+const deliveryStatus = first.DeliveryStatus || first.Delivery || "";
+
+delivery.textContent = deliveryStatus
+  ? "India Post Delivery Status: " + deliveryStatus
+  : "India Post delivery status is available/not available for this PIN Code.";
+    
 
     result.replaceChildren(heading, details, delivery);
   } catch (error) {
