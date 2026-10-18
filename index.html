@@ -89,7 +89,43 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
   const number=document.getElementById("trackingNumber").value.trim();
   const result=document.getElementById("result");
   if(!number){result.textContent="Please enter your tracking number.";return;}
-  result.textContent="Tracking number: "+number+". Live status is not connected yet. Please check this number with the official Mark Express tracking service. Once authorized tracking access is available, this section can display the actual shipment status.";
+  fetch("https://kfdtsbhvlwwiazkwjoei.supabase.co/rest/v1/rpc/track_shipment", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "apikey": "sb_publishable_p_Qq5VGHTz1INNgasp7zYw_-XQRUaJc",
+    "Authorization": "Bearer sb_publishable_p_Qq5VGHTz1INNgasp7zYw_-XQRUaJc"
+  },
+  body: JSON.stringify({ p_tracking_number: number })
+})
+.then(async response => {
+  if (!response.ok) throw new Error("Database connection failed");
+  return response.json();
+})
+.then(data => {
+  const shipment = Array.isArray(data) ? data[0] : data;
+
+  if (!shipment) {
+    result.textContent = "No shipment found. Please check the tracking number.";
+    return;
+  }
+
+  result.replaceChildren();
+
+  [
+    ["Tracking Number", shipment.tracking_number],
+    ["Status", shipment.status],
+    ["Current Location", shipment.current_location],
+    ["Last Updated", shipment.updated_at || "Not available"]
+  ].forEach(([label, value]) => {
+    const p = document.createElement("p");
+    p.textContent = label + ": " + (value || "Not available");
+    result.appendChild(p);
+  });
+})
+.catch(error => {
+  result.textContent = "Tracking error: " + error.message;
+});
 });
 </script>
 </body>
