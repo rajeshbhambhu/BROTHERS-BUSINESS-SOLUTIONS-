@@ -270,6 +270,79 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
   await showSession();
 })();
 </script>
+
+<section id="pin-search" style="max-width:600px;margin:25px auto;padding:20px;border:1px solid #ddd;border-radius:12px;font-family:Arial,sans-serif;">
+  <h2 style="text-align:center;">PIN Code Search</h2>
+  <p style="text-align:center;">Check Delivery Availability</p>
+
+  <input
+    id="pinInput"
+    type="text"
+    inputmode="numeric"
+    maxlength="6"
+    placeholder="Enter 6-digit PIN Code"
+    style="width:100%;box-sizing:border-box;padding:13px;font-size:16px;border:1px solid #bbb;border-radius:7px;"
+  >
+
+  <button
+    onclick="searchPinCode()"
+    style="width:100%;margin-top:12px;padding:13px;background:#1266cc;color:white;border:0;border-radius:7px;font-size:16px;"
+  >Search PIN Code</button>
+
+  <div id="pinResult" role="status" style="margin-top:15px;line-height:1.6;"></div>
+</section>
+
+<script>
+async function searchPinCode() {
+  const pin = document.getElementById("pinInput").value.trim();
+  const result = document.getElementById("pinResult");
+
+  if (!/^\d{6}$/.test(pin)) {
+    result.textContent = "Please enter a valid 6-digit PIN Code.";
+    return;
+  }
+
+  result.textContent = "Searching PIN Code...";
+
+  try {
+    const response = await fetch(
+      "https://api.postalpincode.in/pincode/" + encodeURIComponent(pin)
+    );
+
+    if (!response.ok) throw new Error("Network error");
+
+    const data = await response.json();
+
+    if (!data[0] || data[0].Status !== "Success" ||
+        !data[0].PostOffice || !data[0].PostOffice.length) {
+      result.textContent = "PIN Code not found.";
+      return;
+    }
+
+    const offices = data[0].PostOffice;
+    const first = offices[0];
+
+    const heading = document.createElement("h3");
+    heading.textContent = "PIN Code Details";
+
+    const details = document.createElement("p");
+    details.textContent =
+      "District: " + first.District +
+      " | State: " + first.State +
+      " | Post Office: " + offices.map(o => o.Name).join(", ");
+
+    const delivery = document.createElement("p");
+    delivery.textContent =
+      "Delivery service: Please confirm availability with Brothers Business Solutions.";
+
+    result.replaceChildren(heading, details, delivery);
+  } catch (error) {
+    result.textContent =
+      "Could not check this PIN Code right now. Please try again later.";
+  }
+}
+</script>
+  
 </body>
 </html>
 
