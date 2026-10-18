@@ -99,7 +99,9 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
   body: JSON.stringify({ p_tracking_number: number })
 })
 .then(async response => {
-  if (!response.ok) throw new Error("Database connection failed");
+  if (!response.ok) {
+  throw new Error(await response.text());
+  }
   return response.json();
 })
 .then(data => {
