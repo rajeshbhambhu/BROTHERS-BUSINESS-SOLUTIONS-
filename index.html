@@ -1,72 +1,97 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#12304a">
-<meta name="description" content="Brothers Business Solutions - ऑल इंडिया रोड ट्रांसपोर्ट, माल ढुलाई और लॉजिस्टिक्स सहायता।">
-<title>Brothers Business Solutions | ऑल इंडिया ट्रांसपोर्ट</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRK INTERNATIONAL | Courier & Logistics</title>
 <style>
-:root{--navy:#12304a;--blue:#1769aa;--orange:#f59e0b;--ink:#172536;--muted:#5e6c7b;--bg:#f4f7fb;--white:#fff;--line:#dfe7ef}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
-a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;color:var(--navy);font-size:1.05rem}.logo{display:grid;place-items:center;background:var(--orange);color:#172536;font-weight:900;width:46px;height:46px;border-radius:13px}.navlinks{display:flex;gap:22px;align-items:center;font-size:.94rem;font-weight:700}.navlinks a:hover{color:var(--blue)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:800;border:0;cursor:pointer}.btn-primary{background:var(--orange);color:#182536}.btn-dark{background:var(--navy);color:white}.btn-outline{border:1px solid var(--line);background:white;color:var(--navy)}
-.hero{background:linear-gradient(120deg,#102c44,#194f78);color:white;padding:64px 0 56px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}.tag{display:inline-block;padding:6px 12px;border:1px solid #ffffff55;border-radius:99px;font-size:.88rem;font-weight:800;color:#ffe2a1}.hero h1{font-size:clamp(2.1rem,6vw,4rem);line-height:1.12;margin:18px 0}.hero h1 span{color:#ffc451}.hero p{font-size:1.12rem;color:#e3edf5;max-width:620px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.hero-card{background:white;color:var(--ink);padding:25px;border-radius:22px;box-shadow:0 18px 45px #001a2e55}.hero-card h2{margin:0 0 8px;color:var(--navy)}.hero-card p{font-size:1rem;color:var(--muted)}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.mini{background:var(--bg);padding:14px;border-radius:12px;font-weight:750}.mini b{display:block;font-size:1.3rem;color:var(--blue)}
-section{padding:58px 0}.section-title{text-align:center;max-width:740px;margin:0 auto 30px}.section-title h2{color:var(--navy);font-size:clamp(1.65rem,4vw,2.5rem);line-height:1.2;margin:0 0 12px}.section-title p{margin:0;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:23px;box-shadow:0 8px 22px #193b5610}.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#fff0cf;font-size:1.5rem}.card h3{color:var(--navy);margin:14px 0 8px}.card p{color:var(--muted);margin:0}.about{background:white}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.about-panel{background:var(--navy);color:white;border-radius:22px;padding:28px}.about-panel h3{font-size:1.5rem;margin-top:0}.checks{padding:0;list-style:none}.checks li{margin:12px 0}.checks li:before{content:"✓";color:#ffc451;font-weight:900;margin-right:10px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:22px;background:white;border-radius:16px;border:1px solid var(--line)}.num{font-weight:900;font-size:1.5rem;color:var(--blue)}.contact{background:#eaf1f8}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}.contact-box{background:white;border:1px solid var(--line);border-radius:18px;padding:24px}.contact-box h3{margin-top:0;color:var(--navy)}.contact-item{padding:12px 0;border-bottom:1px solid var(--line)}.contact-item:last-child{border:0}.small{font-size:.88rem;color:var(--muted)}footer{background:#0c2235;color:#dbe6ef;padding:25px 0;text-align:center}.wa-float{position:fixed;right:16px;bottom:18px;z-index:10;background:#20bd5a;color:white;padding:13px 17px;border-radius:99px;font-weight:850;box-shadow:0 8px 25px #0003;display:flex;gap:8px;align-items:center}.wa-float span{font-size:1.25rem}
-@media(max-width:760px){.nav{padding:12px 0;align-items:flex-start;flex-direction:column}.navlinks{width:100%;overflow-x:auto;gap:17px;padding-bottom:5px;white-space:nowrap}.hero{padding:45px 0}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.cards,.steps{grid-template-columns:1fr}.hero-card{margin-top:8px}section{padding:44px 0}.wa-float{right:12px;bottom:12px;padding:11px 14px}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f6f6f6;color:#222}
+header{background:#c90020;color:white;padding:25px 18px;text-align:center}
+.logo{font-size:34px;font-weight:900;letter-spacing:1px}
+header p{margin:8px 0 0}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;background:#202020;padding:12px}
+nav a{color:white;text-decoration:none;padding:8px 12px;font-weight:bold}
+.hero{background:linear-gradient(135deg,#c90020,#750015);color:white;padding:48px 20px;text-align:center}
+.hero h1{font-size:clamp(30px,7vw,48px);margin:0 0 14px}
+.hero p{max-width:650px;margin:0 auto;line-height:1.7}
+.btn{display:inline-block;background:white;color:#c90020;padding:13px 20px;border-radius:7px;text-decoration:none;font-weight:bold;margin-top:20px}
+.container{width:min(100% - 28px,950px);margin:25px auto}
+.card{background:white;padding:24px;border-radius:12px;margin-bottom:20px;box-shadow:0 4px 16px #0000000d}
+h2{color:#c90020;margin-top:0}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.service{border:1px solid #eee;border-top:4px solid #c90020;padding:18px;border-radius:8px}
+.service h3{margin-top:0}
+label{display:block;font-weight:bold;margin:15px 0 7px}
+input{width:100%;padding:14px;border:1px solid #bbb;border-radius:7px;font-size:16px}
+button{width:100%;padding:14px;background:#c90020;color:white;border:0;border-radius:7px;font-size:16px;font-weight:bold;margin-top:12px;cursor:pointer}
+#result{padding:14px;background:#f5f5f5;border-radius:7px;margin-top:14px;overflow-wrap:anywhere;line-height:1.6}
+.note{background:#fff5e6;border-left:4px solid #e2a127;padding:12px;line-height:1.6}
+footer{background:#202020;color:white;text-align:center;padding:25px 15px;line-height:1.8}
 </style>
 </head>
 <body>
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="#home"><span class="logo">BBS</span><span>Brothers Business Solutions<br><small style="font-weight:600;color:#64748b">ऑल इंडिया ट्रांसपोर्ट</small></span></a>
-    <nav class="navlinks" aria-label="मुख्य मेनू">
-      <a href="#services">हमारी सेवाएँ</a><a href="#about">हमारे बारे में</a><a href="#process">काम करने का तरीका</a><a href="#contact">संपर्क करें</a>
-    </nav>
-    <a class="btn btn-dark" href="https://wa.me/918440935967?text=Namaste%2C%20mujhe%20transport%20service%20ki%20jankari%20chahiye." target="_blank" rel="noopener">WhatsApp पर बात करें</a>
-  </div>
+  <div class="logo">BRK INTERNATIONAL</div>
+  <p>COURIER • CARGO • LOGISTICS</p>
 </header>
-<main>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#services">Services</a>
+  <a href="#tracking">Track Shipment</a>
+  <a href="#contact">Contact</a>
+</nav>
 <section class="hero" id="home">
- <div class="wrap hero-grid">
-  <div><span class="tag">🚚 ऑल इंडिया रोड ट्रांसपोर्ट</span>
-   <h1>आपके माल की ढुलाई के लिए <span>भरोसेमंद सहयोग</span></h1>
-   <p>Brothers Business Solutions के साथ पूरे भारत में माल परिवहन की व्यवस्था के लिए संपर्क करें। अपनी जरूरत, माल का प्रकार, लोडिंग और डिलीवरी शहर की जानकारी भेजें—हम आपकी आवश्यकता के अनुसार आगे की जानकारी देने में मदद करेंगे।</p>
-   <div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/918440935967?text=Namaste%2C%20mujhe%20All%20India%20transport%20ka%20quotation%20chahiye." target="_blank" rel="noopener">माल ढुलाई का भाव पूछें →</a><a class="btn btn-outline" href="#services">सेवाएँ देखें</a></div>
-  </div>
-  <div class="hero-card"><h2>ट्रांसपोर्ट की जानकारी भेजें</h2><p>WhatsApp पर ये जानकारी भेजें ताकि आपकी जरूरत समझी जा सके।</p>
-   <div class="mini-grid"><div class="mini"><b>01</b> लोडिंग शहर</div><div class="mini"><b>02</b> डिलीवरी शहर</div><div class="mini"><b>03</b> माल का प्रकार</div><div class="mini"><b>04</b> वजन / मात्रा</div></div>
-   <p class="small">दरें, वाहन की उपलब्धता और डिलीवरी समय माल व रूट के अनुसार पुष्टि किए जाएँगे।</p>
-  </div>
- </div>
+  <h1>Moving Your Business Forward</h1>
+  <p>Your trusted destination for courier, cargo and shipment assistance. We help you find the right way to check your consignment status.</p>
+  <a class="btn" href="#tracking">TRACK YOUR SHIPMENT</a>
 </section>
-<section id="services"><div class="wrap">
- <div class="section-title"><h2>हमारी ट्रांसपोर्ट सेवाएँ</h2><p>व्यापारिक माल की ढुलाई और परिवहन संबंधी जरूरतों के लिए सहयोग। अपनी आवश्यकता बताकर उपलब्ध विकल्पों की जानकारी लें।</p></div>
- <div class="cards">
-  <article class="card"><div class="ico">🚛</div><h3>ऑल इंडिया गुड्स ट्रांसपोर्ट</h3><p>भारत के अलग-अलग शहरों और राज्यों के बीच माल भेजने की व्यवस्था के लिए संपर्क करें।</p></article>
-  <article class="card"><div class="ico">📦</div><h3>व्यापारिक माल की ढुलाई</h3><p>दुकानदारों, व्यापारियों और कंपनियों की माल परिवहन संबंधी आवश्यकताओं पर चर्चा।</p></article>
-  <article class="card"><div class="ico">🛣️</div><h3>रोड ट्रांसपोर्ट सहायता</h3><p>रूट, माल की मात्रा और वाहन की जरूरत के अनुसार परिवहन विकल्पों की जानकारी।</p></article>
-  <article class="card"><div class="ico">🤝</div><h3>ट्रांसपोर्ट समन्वय</h3><p>लोडिंग, डिलीवरी और परिवहन से जुड़ी जानकारी के समन्वय में सहयोग।</p></article>
-  <article class="card"><div class="ico">💬</div><h3>रेट / कोटेशन पूछें</h3><p>लोडिंग और डिलीवरी स्थान, वजन और माल का विवरण भेजकर दर की जानकारी माँगें।</p></article>
-  <article class="card"><div class="ico">📍</div><h3>रूट के अनुसार योजना</h3><p>अपनी पिकअप और डिलीवरी लोकेशन साझा करें ताकि उपयुक्त व्यवस्था पर बात हो सके।</p></article>
- </div>
-</div></section>
-<section class="about" id="about"><div class="wrap about-grid">
- <div><div class="section-title" style="text-align:left;margin:0 0 18px"><h2>Brothers Business Solutions के बारे में</h2><p>हमारा उद्देश्य ग्राहकों की ट्रांसपोर्ट जरूरत को समझकर स्पष्ट जानकारी और उचित समन्वय में मदद करना है।</p></div>
- <p>हर माल और हर रूट की जरूरत अलग होती है। इसलिए कोटेशन पूछते समय माल का प्रकार, वजन/मात्रा, लोडिंग शहर, डिलीवरी शहर और अपेक्षित तारीख बताना उपयोगी रहेगा।</p>
- <a class="btn btn-dark" href="https://wa.me/918440935967?text=Namaste%2C%20transport%20service%20ke%20liye%20baat%20karni%20hai." target="_blank" rel="noopener">हमसे WhatsApp पर संपर्क करें</a></div>
- <div class="about-panel"><h3>ग्राहकों के लिए हमारा तरीका</h3><ul class="checks"><li>जरूरत और रूट की जानकारी लेना</li><li>माल व वाहन की आवश्यकता समझना</li><li>दर और उपलब्धता की पुष्टि करना</li><li>आगे की प्रक्रिया स्पष्ट करना</li></ul><p class="small" style="color:#d5e2ec">सेवा, वाहन उपलब्धता, समय और शुल्क की पुष्टि संपर्क के समय की जाएगी।</p></div>
-</div></section>
-<section id="process"><div class="wrap"><div class="section-title"><h2>ट्रांसपोर्ट बुकिंग के लिए 3 आसान कदम</h2><p>अपनी जरूरत बताइए और आगे की जानकारी सीधे संपर्क में प्राप्त कीजिए।</p></div>
- <div class="steps"><div class="step"><div class="num">01</div><h3>माल की जानकारी दें</h3><p>माल का प्रकार, वजन/मात्रा और पैकिंग की जानकारी तैयार रखें।</p></div><div class="step"><div class="num">02</div><h3>रूट साझा करें</h3><p>कहाँ से माल उठाना है और किस शहर में पहुँचाना है, यह बताएँ।</p></div><div class="step"><div class="num">03</div><h3>दर की पुष्टि करें</h3><p>वाहन, भाड़ा, समय और शर्तें तय होने के बाद ही बुकिंग की पुष्टि करें।</p></div></div>
-</div></section>
-<section class="contact" id="contact"><div class="wrap"><div class="section-title"><h2>ट्रांसपोर्ट के लिए संपर्क करें</h2><p>कोटेशन या माल ढुलाई की जानकारी के लिए WhatsApp या ईमेल से संपर्क करें।</p></div>
- <div class="contact-grid"><div class="contact-box"><h3>सीधे बात करें</h3><div class="contact-item"><strong>📱 WhatsApp / मोबाइल</strong><br><a href="https://wa.me/918440935967" target="_blank" rel="noopener">+91 84409 35967</a></div><div class="contact-item"><strong>✉️ ईमेल</strong><br><a href="mailto:rajeshbhambhu7778@gmail.com">rajeshbhambhu7778@gmail.com</a></div><p class="small">WhatsApp पर संदेश भेजने के लिए हरे बटन को दबाएँ।</p><a class="btn" style="background:#20bd5a;color:white" href="https://wa.me/918440935967?text=Namaste%2C%20mujhe%20transport%20quotation%20chahiye." target="_blank" rel="noopener">🟢 WhatsApp संदेश भेजें</a></div>
- <div class="contact-box"><h3>कोटेशन के लिए ये जानकारी भेजें</h3><ul><li>लोडिंग शहर / पिन कोड</li><li>डिलीवरी शहर / पिन कोड</li><li>माल का प्रकार और वजन</li><li>वाहन या डिलीवरी की अपेक्षित तारीख</li></ul><a class="btn btn-dark" href="https://wa.me/918440935967?text=Namaste%2C%20transport%20quotation%20ke%20liye%20details%3A%0ALoading%20city%3A%0ADelivery%20city%3A%0AGoods%20type%3A%0AWeight%3A%0ADate%3A" target="_blank" rel="noopener">जानकारी WhatsApp पर भेजें →</a></div></div>
-</div></section>
+<main class="container">
+  <section class="card" id="about">
+    <h2>About BRK INTERNATIONAL</h2>
+    <p>BRK INTERNATIONAL is focused on courier and logistics assistance, shipment enquiries and reliable customer communication.</p>
+  </section>
+  <section class="card" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service"><h3>Courier Services</h3><p>Support for courier and consignment enquiries.</p></div>
+      <div class="service"><h3>Cargo & Logistics</h3><p>Assistance with transport and logistics information.</p></div>
+      <div class="service"><h3>Shipment Tracking</h3><p>Enter your consignment number to begin tracking assistance.</p></div>
+    </div>
+  </section>
+  <section class="card" id="tracking">
+    <h2>Track Your Shipment</h2>
+    <p>Enter your Mark Express consignment or tracking number below.</p>
+    <form id="trackingForm">
+      <label for="trackingNumber">Tracking / Consignment Number</label>
+      <input id="trackingNumber" required placeholder="Enter tracking number" autocomplete="off">
+      <button type="submit">Check Tracking</button>
+    </form>
+    <div id="result" role="status" aria-live="polite">Your tracking instructions will appear here.</div>
+    <p class="note"><strong>Important:</strong> Live shipment status is not connected yet. This requires an authorized Mark Express tracking API or an approved tracking integration. This page will not invent delivery statuses.</p>
+  </section>
+  <section class="card" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Business Name:</strong> BRK INTERNATIONAL</p>
+    <p>Please add your verified business phone number and email address here before publishing.</p>
+  </section>
 </main>
-<footer><div class="wrap"><strong>Brothers Business Solutions</strong><br>ऑल इंडिया ट्रांसपोर्ट एवं माल ढुलाई सहायता<br><span class="small" style="color:#b7c8d8">© <span id="year"></span> Brothers Business Solutions. सभी अधिकार सुरक्षित।</span></div></footer>
-<a class="wa-float" href="https://wa.me/918440935967?text=Namaste%2C%20mujhe%20transport%20service%20chahiye." target="_blank" rel="noopener" aria-label="WhatsApp पर संपर्क करें"><span>☏</span> WhatsApp पर संपर्क करें</a>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<footer>
+  <strong>BRK INTERNATIONAL</strong><br>
+  Courier • Cargo • Logistics<br>
+  © <span id="year"></span> All rights reserved.
+</footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("trackingForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const number=document.getElementById("trackingNumber").value.trim();
+  const result=document.getElementById("result");
+  if(!number){result.textContent="Please enter your tracking number.";return;}
+  result.textContent="Tracking number: "+number+". Live status is not connected yet. Please check this number with the official Mark Express tracking service. Once authorized tracking access is available, this section can display the actual shipment status.";
+});
+</script>
 </body>
 </html>
+
