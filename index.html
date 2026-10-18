@@ -20,14 +20,14 @@ nav a{color:#063b73;text-decoration:none;padding:8px 12px;font-weight:bold}
 .card{background:white;padding:24px;border-radius:12px;margin-bottom:20px;box-shadow:0 4px 16px #0000000d}
 h2{color:#063b73;margin-top:0}
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
-.service{border:1px solid #eee;border-top:4px solid #c90020;padding:18px;border-radius:8px}
+..service{background:#fff;border:1px solid #e1eaf4;border-top:4px solid #087bd3;padding:20px;border-radius:10px;box-shadow:0 4px 12px #063b7310}
 .service h3{margin-top:0}
 label{display:block;font-weight:bold;margin:15px 0 7px}
 input{width:100%;padding:14px;border:1px solid #bbb;border-radius:7px;font-size:16px}
-button{width:100%;padding:14px;background:#c90020;color:white;border:0;border-radius:7px;font-size:16px;font-weight:bold;margin-top:12px;cursor:pointer}
+button{width:100%;padding:14px;background:#063b73;color:white;border:0;border-radius:7px;font-size:16px;font-weight:bold;margin-top:12px;cursor:pointer}
 #result{padding:14px;background:#f5f5f5;border-radius:7px;margin-top:14px;overflow-wrap:anywhere;line-height:1.6}
 .note{background:#fff5e6;border-left:4px solid #e2a127;padding:12px;line-height:1.6}
-footer{background:#202020;color:white;text-align:center;padding:25px 15px;line-height:1.8}
+footer{background:#063b73;color:white;text-align:center;padding:30px 15px;line-height:1.8;border-top:4px solid #087bd3}
 </style>
 </head>
 <body>
@@ -50,19 +50,28 @@ footer{background:#202020;color:white;text-align:center;padding:25px 15px;line-h
 <main class="container">
   <section class="card" id="about">
     <h2>About BRK INTERNATIONAL</h2>
-    <p>BRK INTERNATIONAL is focused on courier and logistics assistance, shipment enquiries and reliable customer communication.</p>
+    <p>BRK INTERNATIONAL is committed to making courier and logistics enquiries simple and convenient. Explore shipment tracking assistance, domestic and international courier information, cargo services and customer support — all in one place.</p>
   </section>
   <section class="card" id="services">
     <h2>Our Services</h2>
     <div class="services">
-      <div class="service"><h3>Courier Services</h3><p>Support for courier and consignment enquiries.</p></div>
-      <div class="service"><h3>Cargo & Logistics</h3><p>Assistance with transport and logistics information.</p></div>
-      <div class="service"><h3>Shipment Tracking</h3><p>Enter your consignment number to begin tracking assistance.</p></div>
+  <div class="service">
+    <h3>📦 Domestic Courier</h3>
+    <p>Reliable parcel and document delivery services across India.</p>
+  </div>
+  <div class="service">
+    <h3>🌍 International Courier</h3>
+    <p>Courier solutions for international shipments and global delivery enquiries.</p>
+  </div>
+  <div class="service">
+    <h3>🚚 Cargo & Logistics</h3>
+    <p>Transport, cargo and logistics assistance for your business needs.</p>
+  </div>
     </div>
   </section>
   <section class="card" id="tracking">
     <h2>Track Your Shipment</h2>
-    <p>Enter your Mark Express consignment or tracking number below.</p>
+    <p>Enter your BRK INTERNATIONAL consignment or tracking number below.</p>
     <form id="trackingForm">
       <label for="trackingNumber">Tracking / Consignment Number</label>
       <input id="trackingNumber" required placeholder="Enter tracking number" autocomplete="off">
@@ -74,7 +83,8 @@ footer{background:#202020;color:white;text-align:center;padding:25px 15px;line-h
   <section class="card" id="contact">
     <h2>Contact Us</h2>
     <p><strong>Business Name:</strong> BRK INTERNATIONAL</p>
-    <p>Please add your verified business phone number and email address here before publishing.</p>
+    <p>For courier enquiries, shipment assistance and business support, please contact the BRK INTERNATIONAL team.</p>
+<p><strong>Business Hours:</strong> Please contact us for availability and support timings.</p>
   </section>
 </main>
 <footer>
