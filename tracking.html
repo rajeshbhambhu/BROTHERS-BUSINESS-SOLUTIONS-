@@ -113,7 +113,7 @@
         }
         result.replaceChildren(card);
       } catch (error) {
-        result.innerHTML = '<p class="error">We could not check this shipment right now. Please try again later or contact Brothers Business Solutions.</p>';
+        result.innerHTML = result.textContent = "Error: " + error.message;
       } finally {
         button.disabled = false;
         button.textContent = "Track Shipment";
