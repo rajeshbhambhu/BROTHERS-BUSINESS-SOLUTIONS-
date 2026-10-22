@@ -66,10 +66,17 @@ footer{background:#063b73;color:white;text-align:center;padding:30px 15px;line-h
 </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">BRK INTERNATIONAL</div>
+  <img
+    src="riseon-logo.png"
+    alt="RISEON EXPRESS Logo"
+    class="logo-image"
+  >
   <p>COURIER • CARGO • LOGISTICS</p>
+  <p>Your Trust. Our Commitment.</p>
 </header>
+  
 <nav>
   <a href="#home">Home</a>
   <a href="#about">About Us</a>
@@ -79,13 +86,13 @@ footer{background:#063b73;color:white;text-align:center;padding:30px 15px;line-h
 </nav>
 <section class="hero" id="home">
   <h1>Fast, Safe & Reliable Courier Services</h1>
-  <p>Ship Across India & Worldwide with BRK INTERNATIONAL. Enjoy reliable courier, express parcel, cargo and international shipping services with professional support at every step.</p>
+  <p>Ship Across India & Worldwide with RISEON EXPRESS. Enjoy reliable courier, express parcel, cargo and international shipping services with professional support at every step.</p>
   <a class="btn" href="#tracking">TRACK YOUR SHIPMENT</a>
 </section>
 <main class="container">
   <section class="card" id="about">
-    <h2>About BRK INTERNATIONAL</h2>
-    <p>BRK INTERNATIONAL is committed to making courier and logistics enquiries simple and convenient. Explore shipment tracking assistance, domestic and international courier information, cargo services and customer support — all in one place.</p>
+    <h2>RISEON EXPRESS | Courier & Logistics</h2>
+    <p>RISEON EXPRESS is committed to making courier and logistics enquiries simple and convenient. Explore shipment tracking assistance, domestic and international courier information, cargo services and customer support — all in one place.</p>
   </section>
   <section class="card" id="services">
     <h2>Our Services</h2>
@@ -106,7 +113,7 @@ footer{background:#063b73;color:white;text-align:center;padding:30px 15px;line-h
   </section>
   <section class="card" id="tracking">
     <h2>Track Your Shipment</h2>
-    <p>Enter your BRK INTERNATIONAL consignment or tracking number below.</p>
+    <p>Enter your RISEON EXPRESS consignment or tracking number below.</p>
     <form id="trackingForm">
       <label for="trackingNumber">Tracking / Consignment Number</label>
       <input id="trackingNumber" required placeholder="Enter tracking number" autocomplete="off">
@@ -117,13 +124,13 @@ footer{background:#063b73;color:white;text-align:center;padding:30px 15px;line-h
   </section>
   <section class="card" id="contact">
     <h2>Contact Us</h2>
-    <p><strong>Business Name:</strong> BRK INTERNATIONAL</p>
-    <p>For courier enquiries, shipment assistance and business support, please contact the BRK INTERNATIONAL team.</p>
+    <p><strong>Business Name:</strong> RISEON EXPRESS </p>
+    <p>For courier enquiries, shipment assistance and business support, please contact the RISEON EXPRESS  team.</p>
 <p><strong>Business Hours:</strong> Please contact us for availability and support timings.</p>
   </section>
 </main>
 <footer>
-  <strong>BRK INTERNATIONAL</strong><br>
+  <strong>RISEON EXPRESS </strong><br>
   Courier • Cargo • Logistics<br>
   © <span id="year"></span> All rights reserved.
 </footer>
@@ -176,31 +183,31 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
 });
 </script>
   
-<!-- BRK INTERNATIONAL ADMIN PANEL -->
-<section id="brk-admin" style="max-width:600px;margin:30px auto;padding:20px;border:1px solid #ccc;border-radius:12px;font-family:Arial,sans-serif">
+<!-- RISEON EXPRESS ADMIN PANEL -->
+<section id="riseon-admin" style="max-width:600px;margin:30px auto;padding:20px;border:1px solid #ccc;border-radius:12px;font-family:Arial,sans-serif">
   <h2>Admin Login</h2>
   <p>Only authorized administrator can manage shipments.</p>
 
   <form id="brk-login">
     <label>Email</label>
-    <input id="brk-email" type="email" required placeholder="Admin email"
+    <input id="riseon-email" type="email" required placeholder="Admin email"
       style="display:block;width:100%;padding:12px;margin:8px 0 14px;box-sizing:border-box">
     <label>Password</label>
-    <input id="brk-password" type="password" required placeholder="Admin password"
+    <input id="riseon-password" type="password" required placeholder="Admin password"
       style="display:block;width:100%;padding:12px;margin:8px 0 14px;box-sizing:border-box">
     <button type="submit" style="padding:12px;width:100%">Login</button>
   </form>
 
-  <div id="brk-panel" hidden>
+  <div id="riseon-panel" hidden>
     <hr>
     <h3>Manage Shipment</h3>
-    <form id="brk-shipment">
+    <form id="riseon-shipment">
       <label>Tracking Number</label>
-      <input id="brk-track" required placeholder="e.g. BBS12345"
+      <input id="riseon-track" required placeholder="e.g. BBS12345"
         style="display:block;width:100%;padding:12px;margin:8px 0 14px;box-sizing:border-box">
 
       <label>Status</label>
-      <select id="brk-status" style="display:block;width:100%;padding:12px;margin:8px 0 14px;box-sizing:border-box">
+      <select id="riseon-status" style="display:block;width:100%;padding:12px;margin:8px 0 14px;box-sizing:border-box">
         <option>Booked</option>
         <option>In Transit</option>
         <option>Out for Delivery</option>
@@ -209,14 +216,14 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
       </select>
 
       <label>Current Location</label>
-      <input id="brk-location" required placeholder="e.g. Delhi"
+      <input id="riseon-location" required placeholder="e.g. Delhi"
         style="display:block;width:100%;padding:12px;margin:8px 0 14px;box-sizing:border-box">
 
       <button type="submit" style="padding:12px;width:100%">Save Shipment</button>
     </form>
-    <button id="brk-logout" type="button" style="padding:12px;width:100%;margin-top:10px">Logout</button>
+    <button id="riseon-logout" type="button" style="padding:12px;width:100%;margin-top:10px">Logout</button>
   </div>
-  <p id="brk-message" role="status"></p>
+  <p id="riseon-message" role="status"></p>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -226,10 +233,10 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
   const KEY = "sb_publishable_p_Qq5VGHTz1INNgasp7zYw_-XQRUaJc";
   const db = window.supabase.createClient(URL, KEY);
 
-  const login = document.getElementById("brk-login");
-  const panel = document.getElementById("brk-panel");
-  const msg = document.getElementById("brk-message");
-  const shipmentForm = document.getElementById("brk-shipment");
+  const login = document.getElementById("riseon-login");
+  const panel = document.getElementById("riseon-panel");
+  const msg = document.getElementById("riseon-message");
+  const shipmentForm = document.getElementById("riseon-shipment");
 
   function message(text) { msg.textContent = text; }
 
@@ -244,8 +251,8 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
     e.preventDefault();
     message("Logging in...");
     const { error } = await db.auth.signInWithPassword({
-      email: document.getElementById("brk-email").value.trim(),
-      password: document.getElementById("brk-password").value
+      email: document.getElementById("riseon-email").value.trim(),
+      password: document.getElementById("riseon-password").value
     });
     if (error) {
       message("Login failed: " + error.message);
@@ -259,9 +266,9 @@ document.getElementById("trackingForm").addEventListener("submit",function(e){
     e.preventDefault();
     message("Saving shipment...");
 
-    const tracking = document.getElementById("brk-track").value.trim();
-    const status = document.getElementById("brk-status").value;
-    const location = document.getElementById("brk-location").value.trim();
+    const tracking = document.getElementById("riseon-track").value.trim();
+    const status = document.getElementById("riseon-status").value;
+    const location = document.getElementById("riseon-location").value.trim();
 
     const { data: sessionData } = await db.auth.getSession();
     if (!sessionData.session) {
@@ -381,8 +388,8 @@ async function searchPinCode() {
 const deliveryStatus = first.DeliveryStatus || first.Delivery || "";
 
 delivery.textContent = deliveryStatus
-  ? "India Post Delivery Status: " + deliveryStatus
-  : "India Post delivery status is available/not available for this PIN Code.";
+  ? "RISEON EXPRESS Delivery Status: " + deliveryStatus
+  : "RISEON EXPRESS status is available/not available for this PIN Code.";
     
 
     result.replaceChildren(heading, details, delivery);
@@ -398,7 +405,7 @@ delivery.textContent = deliveryStatus
 <div style="text-align:center; padding:20px;">
   <img src="file_0000000048d082469c6a86eca20e532d.png" alt="BRK INTERNATIONAL Logo"
        style="width:180px;height:180px;object-fit:contain;border-radius:50%;">
-  <h2 style="color:#d71920;">BRK INTERNATIONAL</h2>
+  <h2 style="color:#d71920;">RISEON EXPRESS</h2>
   <p>📞 <a href="tel:+919351047840">+91 9351047840</a></p>
 </div>
   
