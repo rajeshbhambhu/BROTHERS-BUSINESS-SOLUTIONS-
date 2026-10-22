@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RISEON EXPRESS provides courier, cargo and logistics support. Contact us for shipment enquiries and service information.">
+  <meta name="theme-color" content="#102b4e">
+  <title>RISEON EXPRESS | Courier • Cargo • Logistics</title>
+  <style>
+    :root {
+      --navy: #102b4e;
+      --blue: #1768a5;
+      --gold: #f5a623;
+      --ink: #1d2b3a;
+      --muted: #64748b;
+      --pale: #f3f7fb;
+      --white: #fff;
+      --line: #e1e8f0;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .topbar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 8px 14px;
+      font-size: 13px;
+      letter-spacing: .3px;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      position: relative;
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
+    .brand-mark { width: 58px; height: 58px; flex: 0 0 58px; }
+    .brand-name {
+      color: var(--navy);
+      font-size: clamp(19px, 3vw, 27px);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: .6px;
+    }
+    .brand-tag {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+    nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none;
+      color: #34465b;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    nav a:hover { color: var(--blue); }
+    .hero {
+      color: white;
+      background: linear-gradient(120deg, rgba(16,43,78,.98), rgba(23,104,165,.91));
+      padding: 72px 20px 68px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner { max-width: 1120px; margin: 0 auto; position: relative; }
+    .eyebrow {
+      color: #ffd78b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    h1 {
+      max-width: 760px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.08;
+      margin: 14px 0 18px;
+      letter-spacing: -.8px;
+    }
+    .hero p { max-width: 650px; color: #e7eff8; font-size: 17px; margin: 0 0 28px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 8px;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      border: 2px solid transparent;
+    }
+    .btn-gold { background: var(--gold); color: #1b2b3b; }
+    .btn-outline { border-color: rgba(255,255,255,.65); color: white; }
+    .section { padding: 62px 20px; }
+    .section.alt { background: var(--pale); }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .section-title { text-align: center; margin: 0 auto 12px; color: var(--navy); font-size: clamp(26px, 4vw, 36px); line-height: 1.2; }
+    .section-intro { max-width: 700px; margin: 0 auto 32px; color: var(--muted); text-align: center; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 24px rgba(16,43,78,.05);
+    }
+    .iconbox {
+      width: 48px; height: 48px; display: grid; place-items: center;
+      background: #e8f2fb; border-radius: 12px; color: var(--blue);
+      font-size: 24px; margin-bottom: 15px;
+    }
+    .card h3 { margin: 0 0 9px; color: var(--navy); font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+    .about-grid h2 { text-align: left; }
+    .about-grid p { color: var(--muted); }
+    .promise {
+      background: var(--navy); color: white; border-radius: 16px; padding: 30px;
+    }
+    .promise strong { display: block; font-size: 25px; line-height: 1.25; margin-bottom: 12px; }
+    .promise p { color: #dbe7f4; margin: 0; }
+    .tracking-box {
+      max-width: 760px; margin: 0 auto; padding: 28px;
+      background: white; border: 1px solid var(--line); border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(16,43,78,.06);
+    }
+    .tracking-box label { display: block; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .tracking-row { display: flex; gap: 10px; }
+    input, textarea {
+      width: 100%; min-width: 0; border: 1px solid #cbd5e1; border-radius: 8px;
+      padding: 13px 14px; font: inherit; background: white; color: var(--ink);
+    }
+    input:focus, textarea:focus { outline: 2px solid #9cc9ef; border-color: var(--blue); }
+    button { cursor: pointer; font: inherit; }
+    .tracking-note { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+    #track-result { margin-top: 14px; padding: 12px; border-radius: 8px; background: #fff7e6; color: #6c4b00; display: none; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 22px; }
+    .contact-info { background: var(--navy); color: white; border-radius: 14px; padding: 28px; }
+    .contact-info h3 { margin-top: 0; }
+    .contact-info p { color: #e0eaf5; }
+    .contact-info .small { font-size: 13px; color: #c8d8e9; }
+    .contact-form { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 25px; }
+    .field { margin-bottom: 14px; }
+    .field label { display: block; margin-bottom: 6px; font-weight: 700; font-size: 14px; }
+    textarea { min-height: 110px; resize: vertical; }
+    .submit-btn { border: 0; width: 100%; }
+    footer { background: #0b1d34; color: #dce6f1; padding: 24px 20px; text-align: center; font-size: 13px; }
+    footer strong { color: white; }
+    @media (max-width: 760px) {
+      .header-inner { justify-content: center; }
+      .brand { margin: 0 auto; }
+      nav { justify-content: center; gap: 12px 16px; }
+      .hero { padding: 54px 20px; }
+      .cards { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .section { padding: 48px 18px; }
+      .tracking-box { padding: 20px; }
+      .tracking-row { flex-direction: column; }
+      .tracking-row .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">COURIER &nbsp;•&nbsp; CARGO &nbsp;•&nbsp; LOGISTICS</div>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="RISEON EXPRESS home">
+        <svg class="brand-mark" viewBox="0 0 100 100" role="img" aria-label="RISEON EXPRESS symbol">
+          <circle cx="50" cy="50" r="46" fill="#f2f7fc" stroke="#d7e4f1" stroke-width="2"/>
+          <path d="M25 76V24h27c16 0 25 8 25 22 0 11-6 18-16 21l17 9H56L39 63v13z M39 38v13h12c6 0 10-2 10-7s-4-6-10-6z" fill="#102b4e"/>
+          <path d="M43 69L75 36 70 53 91 29 83 53 69 61 61 77z" fill="#f5a623"/>
+        </svg>
+        <span>
+          <span class="brand-name">RISEON EXPRESS</span>
+          <span class="brand-tag">COURIER • CARGO • LOGISTICS</span>
+        </span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#tracking">Tracking</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="eyebrow">Your Trust. Our Commitment.</div>
+        <h1>Every Shipment Deserves a Reliable Journey.</h1>
+        <p>RISEON EXPRESS is here for courier, cargo and logistics enquiries. Contact us to discuss your shipment requirements and service options.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#contact">Send an Enquiry</a>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <h2 class="section-title">About RISEON EXPRESS</h2>
+          <p>RISEON EXPRESS aims to make courier and logistics enquiries simple, clear and convenient. We believe that communication, care and trust matter at every step of a shipment.</p>
+          <p>Contact us with your origin, destination and shipment details so we can discuss the appropriate service option.</p>
+        </div>
+        <div class="promise">
+          <strong>Your Trust.<br>Our Commitment.</strong>
+          <p>Clear communication. Customer-focused support. A commitment to dependable service.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="wrap">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-intro">Tell us what you need to send. We can discuss the available service options for your requirement.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="iconbox" aria-hidden="true">✉</div>
+            <h3>Courier Services</h3>
+            <p>For document and parcel shipment enquiries, including destination and delivery requirements.</p>
+          </article>
+          <article class="card">
+            <div class="iconbox" aria-hidden="true">▣</div>
+            <h3>Cargo & Logistics</h3>
+            <p>For cargo enquiries, shipment details and coordination based on the size and route of your consignment.</p>
+          </article>
+          <article class="card">
+            <div class="iconbox" aria-hidden="true">⌕</div>
+            <h3>Shipment Enquiries</h3>
+            <p>Share your consignment or enquiry details so the team can help you with the next step.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tracking">
+      <div class="wrap">
+        <h2 class="section-title">Track Shipment</h2>
+        <p class="section-intro">Enter your tracking number to prepare a tracking enquiry.</p>
+        <div class="tracking-box">
+          <form id="tracking-form">
+            <label for="tracking-number">Tracking / Consignment Number</label>
+            <div class="tracking-row">
+              <input id="tracking-number" name="tracking-number" type="text" placeholder="Enter tracking number" autocomplete="off" required>
+              <button class="btn btn-gold" type="submit">Check Status</button>
+            </div>
+          </form>
+          <div id="track-result" role="status" aria-live="polite"></div>
+          <p class="tracking-note">Note: Live shipment status is not connected to this page yet. This form does not retrieve real-time tracking information.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-intro">Send your enquiry details. The form will prepare an email draft on your device if an email app is available.</p>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>RISEON EXPRESS</h3>
+            <p>Courier • Cargo • Logistics</p>
+            <p><strong>Tagline:</strong><br>Your Trust. Our Commitment.</p>
+            <p class="small">Phone number, email address and office address can be added here after they are confirmed.</p>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="field">
+              <label for="customer-name">Your Name</label>
+              <input id="customer-name" name="name" type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="field">
+              <label for="customer-contact">Phone or Email</label>
+              <input id="customer-contact" name="contact" type="text" placeholder="How can we contact you?" required>
+            </div>
+            <div class="field">
+              <label for="customer-message">Shipment Enquiry</label>
+              <textarea id="customer-message" name="message" placeholder="Origin, destination, parcel/cargo details..." required></textarea>
+            </div>
+            <button class="btn btn-gold submit-btn" type="submit">Prepare Enquiry</button>
+            <p class="tracking-note">This page does not send or store your details automatically.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>RISEON EXPRESS</strong><br>
+    Courier • Cargo • Logistics<br>
+    Your Trust. Our Commitment.<br>
+    <span>© <span id="year"></span> RISEON EXPRESS. All rights reserved.</span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('tracking-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const number = document.getElementById('tracking-number').value.trim();
+      const result = document.getElementById('track-result');
+      if (!number) return;
+      result.style.display = 'block';
+      result.textContent = 'Tracking number ' + number + ' received. Live tracking is not connected to this website yet.';
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('customer-name').value.trim();
+      const contact = document.getElementById('customer-contact').value.trim();
+      const message = document.getElementById('customer-message').value.trim();
+      const subject = encodeURIComponent('RISEON EXPRESS shipment enquiry');
+      const body = encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\n\nEnquiry:\n' + message);
+      window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
